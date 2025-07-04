@@ -1,0 +1,104 @@
+---
+
+### ✅ 1. **Create and switch to your desired branch**
+
+```bash
+git checkout -b main
+```
+
+This creates a branch called `main` and switches to it. If you're using `master` or another branch name, just replace `main` with that.
+
+---
+
+### ✅ 2. **Add your files to staging**
+
+```bash
+git add .
+```
+
+This adds all tracked and new files (except those in `.gitignore`).
+
+---
+
+### ✅ 3. **Commit your changes**
+
+```bash
+git commit -m "Initial commit"
+```
+
+---
+
+### ✅ 4. **Add your remote repository (if not already done)**
+
+```bash
+git remote add origin https://github.com/your-username/your-repo.git
+```
+
+> Replace the URL with your GitHub repo link.
+
+You can verify with:
+
+```bash
+git remote -v
+```
+
+---
+
+### ✅ 5. **Push to your remote repository**
+
+If you're pushing to `main`:
+
+```bash
+git push -u origin main
+```
+
+The `-u` flag sets the upstream so you can later just do:
+
+```bash
+git push
+```
+
+---
+create a GitHub repo directly from your terminal
+---
+
+### Using GitHub CLI (`gh`)
+
+1. **Install GitHub CLI** (if not already):
+
+   ```bash
+   sudo apt install gh  # Debian/Ubuntu
+   brew install gh       # macOS
+   ```
+
+2. **Login to GitHub**:
+
+   ```bash
+   gh auth login
+   ```
+
+   Choose GitHub.com, then use **browser auth** or **token** (recommended).
+
+3. **Create the repo**:
+   From inside your project folder:
+
+   ```bash
+   gh repo create my-project-name --public
+   ```
+
+   Or for a private repo:
+
+   ```bash
+   gh repo create my-project-name --private
+   ```
+
+   It will ask:
+
+   > "Would you like to push an existing repository from the current directory?"
+
+   Choose **yes**, and it will:
+
+   * Add the remote
+   * Push your current branch
+
+✅ **Done!**

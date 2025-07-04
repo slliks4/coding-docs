@@ -1,0 +1,89 @@
+---
+
+## 🚀 Starting and Managing tmux
+
+| Command                           | Description                                       |
+| --------------------------------- | ------------------------------------------------- |
+| `tmux`                            | Start a new tmux session with a default name      |
+| `tmux new -s mysession`           | Start a new session named `mysession`             |
+| `tmux ls`                         | List all existing tmux sessions                   |
+| `tmux attach -t mysession`        | Attach (reconnect) to a session named `mysession` |
+| `tmux a` or `tmux a -t mysession` | Shortcut for attach                               |
+| `tmux kill-session -t mysession`  | Kill a specific session                           |
+| `tmux kill-server`                | Kill **all** tmux sessions                        |
+
+---
+
+## 🧭 Sessions
+
+| Command                    | Description                                                   |
+| -------------------------- | ------------------------------------------------------------- |
+| `Ctrl + b`, then `d`       | Detach from current session (leaves it running in background) |
+| `Ctrl + b`, then `s`       | List and switch between sessions                              |
+| `tmux switch -t mysession` | Switch to another session from the command line               |
+
+---
+
+## 🗂️ Windows (Tabs)
+
+| Command                          | Description                  |
+| -------------------------------- | ---------------------------- |
+| `Ctrl + b`, then `c`             | Create a new window (tab)    |
+| `Ctrl + b`, then `,`             | Rename current window        |
+| `Ctrl + b`, then `n` / `p`       | Go to next / previous window |
+| `Ctrl + b`, then `&`             | Close current window         |
+| `tmux move-window -s 3 -t 1`     | Move window 3 to position 1  |
+| `tmux rename-window -t 0 editor` | Rename window 0 to "editor"  |
+| `tmux swap-window -s 3 -t 1'     | Swap window positons
+---
+
+## 🧱 Panes (Splits)
+
+| Command                     | Description                  |
+| --------------------------- | ---------------------------- |
+| `Ctrl + b`, then `%`        | Split window vertically      |
+| `Ctrl + b`, then `"`        | Split window horizontally    |
+| `Ctrl + b`, then arrow keys | Navigate between panes       |
+| `Ctrl + b`, then `x`        | Kill the current pane        |
+| `Ctrl + b`, then `z`        | Toggle zoom for current pane |
+
+---
+
+## 📐 Layouts & Organization
+
+| Command                    | Description                                        |
+| -------------------------- | -------------------------------------------------- |
+| `Ctrl + b`, then `space`   | Cycle pane layouts                                 |
+| `Ctrl + b`, then `q`       | Show pane numbers                                  |
+| `tmux select-layout tiled` | Set a specific layout (tiled, even-vertical, etc.) |
+
+---
+
+## 📋 Clipboard and Buffer
+
+| Command                                                       | Description                  |
+| ------------------------------------------------------------- | ---------------------------- |
+| `Ctrl + b`, then `[`                                          | Enter scroll/copy mode       |
+| `Ctrl + b`, then `]`                                          | Paste the last copied buffer |
+| In copy mode: use `Space` to start selection, `Enter` to copy |                              |
+
+---
+
+## 🧠 Other Useful Commands
+
+| Command                         | Description                                |
+| ------------------------------- | ------------------------------------------ |
+| `tmux source-file ~/.tmux.conf` | Reload your tmux config                    |
+| `Ctrl + b`, then `:`            | Enter command mode (type any tmux command) |
+| `tmux list-keys`                | View all key bindings                      |
+| `tmux list-commands`            | View all available tmux commands           |
+
+---
+2. Rename Your tmux Session
+🔹 From inside the session:
+
+`tmux rename-session -t old_name new_name`
+Or if you're inside the session and want to rename it to my-new-session:
+`tmux rename-session my-new-session`
+🔹 Find current session name:
+tmux display-message -p '#S'
