@@ -1,9 +1,8 @@
 # Create env file in project dir
 export PIPENV_VENV_IN_PROJECT=1
-pipenv shell
 
 # Install Django
-pip install Django
+pipenv install Django
 
 # Start Django project
 django-admin startproject config .
