@@ -1,10 +1,12 @@
-# Coding TODO LIST (22/07/2025)
-** Central-auth: Setup Simple_jwt settings for minimal security
-** Central-auth: Setup CORS
+# Coding TODO LIST (29/07/2025)
 * Ride-Share: Setup RideShare Server
 * Ride-Share: Document the events logic and models
 
 ``` previous
+# Coding TODO LIST (22/07/2025)
+** Central-auth: Setup Simple_jwt settings for minimal security
+** Central-auth: Setup CORS
+
 # Coding TODO LIST (18/07/2025)
 ## Mvp of centralize auth
 ** Work on /endpoints (api endpoints documentation)
